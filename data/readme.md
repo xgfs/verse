@@ -4,17 +4,16 @@ For clarity, we do not include the datasets in the repository itself. Please use
 
 | Datasets | \|V\|  | \|E\| | Size | Source | Link |
 | --- | --- | --- | --- | --- | --- |
-| BlogCatalog | 10k | 334k | 0 | [zafarani2009] | [HOME](http://socialcomputing.asu.edu/datasets/BlogCatalog3) MAT BCSR |
-| CoCit | 44k | 195k | 0 | [tsitsulin2018, ms2016] | [HOME](http://aka.ms/academicgraph) MAT BCSR |
-| CoAuthor | 52k | 178k | 0 | [tsitsulin2018, ms2016] | [HOME](http://aka.ms/academicgraph) MAT BCSR |
-| VK | 79k | 2.7M | 0 | [tsitsulin2018] | HOME MAT BCSR |
-| YouTube | 1.1M | 3M | 0 | [zafarani2009] | [HOME](http://socialcomputing.asu.edu/datasets/YouTube2) MAT BCSR |
-| Orkut | 3.1M | 234M | 0 | [yang2012] | [HOME](http://snap.stanford.edu/data/com-Orkut.html) MAT BCSR |
-
+| BlogCatalog | 10k | 334k | 0 | [zafarani2009] | [HOME](http://socialcomputing.asu.edu/datasets/BlogCatalog3) [MAT](http://leitang.net/social_dimension.html) [BCSR](http://tsitsul.in/pub/blogcatalog.bcsr) |
+| CoCit | 44k | 195k | 0 | [tsitsulin2018, ms2016] | [HOME](http://aka.ms/academicgraph) [MAT](http://tsitsul.in/pub/academic_confs.mat) [BCSR](http://tsitsul.in/pub/academic_confs.bcsr) |
+| CoAuthor | 52k | 178k | 0 | [tsitsulin2018, ms2016] | [HOME](http://aka.ms/academicgraph) [MAT 2014](http://tsitsul.in/pub/academic_coa_2014.mat) [MAT FULL](http://tsitsul.in/pub/academic_coa_full.mat) [BCSR 2014](http://tsitsul.in/pub/academic_coa_2014.bcsr) [BCSR FULL](http://tsitsul.in/pub/academic_coa_full.bcsr) |
+| VK | 79k | 2.7M | 0 | [tsitsulin2018] | (coming soon) |
+| YouTube | 1.1M | 3M | 0 | [zafarani2009] | [HOME](http://socialcomputing.asu.edu/datasets/YouTube2) [MAT](http://leitang.net/social_dimension.html) [BCSR](http://tsitsul.in/pub/youtube.bcsr) |
+| Orkut | 3.1M | 234M | 0 | [yang2012] | [HOME](http://snap.stanford.edu/data/com-Orkut.html) [MAT](http://tsitsul.in/pub/orkut.mat) [BCSR](http://tsitsul.in/pub/orkut.bcsr) |
 
 ## Citation
 
-If you use the datasets, please consider citing original the source.
+If you use the datasets, please consider citing the source.
 
     @article{tsitsulin2018,
         title={VERSE: Versatile Graph Embeddings from Similarity Measures},
