@@ -1,6 +1,6 @@
-# Fantastic datasets and where to find them
+# Datasets used in the paper
 
-For clarity, we do not include the datasets in the repository itself. Please use ``fetch-data.sh`` to get the datasets used in the paper or download them manually using the links in the table.
+For space constraints, we do not include the datasets in the repository itself. Please use the following links to get the datasets used in the paper.
 
 | Datasets | \|V\|  | \|E\| | Size | Source | Link |
 | --- | --- | --- | --- | --- | --- |
