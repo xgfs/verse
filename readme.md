@@ -72,7 +72,7 @@ If you use the code or the datasets, please consider citing out .
 
 ## Full VERSE
 
-This repository only contain the code of the scalable VERSE version. In order to obtain fVERSE, please use [this link](https://github.com/xgfs/fverse). Note, however, that fVERSE code is not well documented and/or supported.
+This repository only contains the code of the scalable VERSE version. In order to obtain fVERSE, please use [this link](https://github.com/xgfs/fverse). Note, however, that fVERSE code is not well documented and/or supported.
 
 ## Contact
 
