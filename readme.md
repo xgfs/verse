@@ -1,8 +1,10 @@
 # VERSE: Versatile Graph Embeddings from Similarity Measures
 
-This repository provides a reference implementation and data of VERSE, as described in the paper. 
+This repository provides a reference implementation of VERSE as well as links to the data.
 
 ## Installation and usage
+
+We make VERSE available in two forms: fast, optimized C++ code that was used in the experiments, and more convenient python wrapper. Note that wrapper is still experimental and may not provide optimal performance.
 
 For C++ executables:
 
@@ -24,7 +26,7 @@ to run the default version (that corresponds to PPR similarity) with 128 embeddi
 
 This implementation uses a custom graph format, namely binary [compressed sparse row](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29) (BCSR) format for efficiency and reduced memory usage. Converter for three common graph formats (MATLAB sparse matrix, adjacency list, edge list) can be found in the ``python`` directory of the project. Usage:
 
-```
+```bash
 $ convert-bcsr --help
 Usage: convert-bcsr [OPTIONS] INPUT OUTPUT
 
@@ -60,7 +62,7 @@ Options:
 
 ## Citation
 
-If you use the code or the datasets, please consider citing out .
+If you use the code or the datasets, please consider citing the oaper:
 
     @inproceedings{Tsitsulin:2018:VVG:3178876.3186120,
         author = {Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M\"{u}ller, Emmanuel},
