@@ -62,12 +62,22 @@ Options:
 
 If you use the code or the datasets, please consider citing out .
 
-    @article{tsitsulin2018,
-        title={VERSE: Versatile Graph Embeddings from Similarity Measures},
-        author={Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M{\"u}ller, Emmanuel},
-        booktitle={Proceedings of The Web Conference 2018},
-        year={2018},
-        organization={ACM}
+    @inproceedings{Tsitsulin:2018:VVG:3178876.3186120,
+        author = {Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M\"{u}ller, Emmanuel},
+        title = {VERSE: Versatile Graph Embeddings from Similarity Measures},
+        booktitle = {Proceedings of the 2018 World Wide Web Conference},
+        series = {WWW '18},
+        year = {2018},
+        isbn = {978-1-4503-5639-8},
+        location = {Lyon, France},
+        pages = {539--548},
+        numpages = {10},
+        url = {https://doi.org/10.1145/3178876.3186120},
+        doi = {10.1145/3178876.3186120},
+        acmid = {3186120},
+        publisher = {International World Wide Web Conferences Steering Committee},
+        address = {Republic and Canton of Geneva, Switzerland},
+        keywords = {feature learning, graph embedding, graph representations, information networks, node embedding, vertex similarity},
     }
 
 ## Full VERSE
