@@ -1,6 +1,8 @@
 TARGETS = verse verse-neigh verse-simrank
+LIBS = verse-library
 
 CXXFLAGS = -std=c++11 -march=native
+LIBFLAGS = -fPIC -shared -lgomp
 
 ifeq ($(CXX), g++)
 	CXXFLAGS += -fopenmp -Ofast
@@ -14,10 +16,13 @@ else
 	CXXFLAGS += -fopenmp -Ofast
 endif
 
-all: $(TARGETS)
+all: $(TARGETS) $(LIBS)
 
 $(TARGETS):
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@ $@.cpp
+
+$(LIBS):
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBFLAGS) -o $@.so $@.cpp
 
 clean:
 	rm -rfv $(TARGETS)
