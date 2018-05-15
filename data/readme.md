@@ -7,7 +7,7 @@ For space constraints, we do not include the datasets in the repository itself. 
 | BlogCatalog | 10k | 334k | 0 | [zafarani2009] | [HOME](http://socialcomputing.asu.edu/datasets/BlogCatalog3) \| [MAT](http://leitang.net/social_dimension.html) \| [BCSR](http://tsitsul.in/pub/blogcatalog.bcsr) |
 | CoCit | 44k | 195k | 0 | [tsitsulin2018, ms2016] | [HOME](http://aka.ms/academicgraph) \| [MAT](http://tsitsul.in/pub/academic_confs.mat) \| [BCSR](http://tsitsul.in/pub/academic_confs.bcsr) |
 | CoAuthor | 52k | 178k | 0 | [tsitsulin2018, ms2016] | [HOME](http://aka.ms/academicgraph) \| [MAT 2014](http://tsitsul.in/pub/academic_coa_2014.mat) \| [MAT FULL](http://tsitsul.in/pub/academic_coa_full.mat) \| [BCSR 2014](http://tsitsul.in/pub/academic_coa_2014.bcsr) \| [BCSR FULL](http://tsitsul.in/pub/academic_coa_full.bcsr) |
-| VK | 79k | 2.7M | 0 | [tsitsulin2018] | (coming soon) | \| [MAT 2016](http://tsitsul.in/pub/vk2016.mat) \| [MAT 2017](http://tsitsul.in/pub/vk2017.mat) \| [BCSR 2016](http://tsitsul.in/pub/vk2016.bcsr) \| [BCSR 2017](http://tsitsul.in/pub/vk2017.bcsr) |
+| VK | 79k | 2.7M | 0 | [tsitsulin2018] | \| [MAT 2016](http://tsitsul.in/pub/vk2016.mat) \| [MAT 2017](http://tsitsul.in/pub/vk2017.mat) \| [BCSR 2016](http://tsitsul.in/pub/vk2016.bcsr) \| [BCSR 2017](http://tsitsul.in/pub/vk2017.bcsr) |
 | YouTube | 1.1M | 3M | 0 | [zafarani2009] | [HOME](http://socialcomputing.asu.edu/datasets/YouTube2) \| [MAT](http://leitang.net/social_dimension.html) \| [BCSR](http://tsitsul.in/pub/youtube.bcsr) |
 | Orkut | 3.1M | 234M | 0 | [yang2012] | [HOME](http://snap.stanford.edu/data/com-Orkut.html) \| [MAT](http://tsitsul.in/pub/orkut.mat) \| [BCSR](http://tsitsul.in/pub/orkut.bcsr) |
 
