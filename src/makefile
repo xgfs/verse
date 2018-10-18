@@ -1,4 +1,4 @@
-TARGETS = verse verse-neigh verse-simrank
+TARGETS = verse verse-weighted verse-neigh verse-simrank
 LIBS = verse-library
 
 CXXFLAGS = -std=c++11 -march=native
