@@ -34,7 +34,7 @@ Usage: convert-bcsr [OPTIONS] INPUT OUTPUT
   list, edge list) can be found in the root directory of the project.
 
 Options:
-  --format [mat|edgelist|adjlist]
+  --format [mat|edgelist|weighted_edgelist|adjlist]
                                   File format of input file
   --matfile-variable-name TEXT    variable name of adjacency matrix inside a
                                   .mat file.
@@ -57,6 +57,12 @@ Options:
         1 4
         ...
 
+1. ``--format weighted_edgelist`` for an edge list, e.g:
+
+        1 2 0.1
+        1 3 2
+        1 4 0.5
+        ...
 1. ``--format mat`` for a Matlab MAT file containing an adjacency matrix
         (note, you must also specify the variable name of the adjacency matrix ``--matfile-variable-name``)
 
