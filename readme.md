@@ -94,4 +94,4 @@ This repository only contains the code of the scalable VERSE version. In order t
 
 ## Contact
 
-`echo "%7=87.=<2=<>527@192.()" | tr '#-)/->' '_-|'`
+`echo "%7=87@=<2=<>5.27" | tr '#-)/->' '_-|'`
