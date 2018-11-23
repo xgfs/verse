@@ -94,7 +94,7 @@ def list2mat(input, undirected, sep, format):
         indptr[i + 1] = indptr[i] + len(graph[i])
     number_of_edges = indptr[-1]
     indices = np.zeros(number_of_edges, dtype=np.int32)
-    weights = np.zeros(number_of_edges, dtype=np.int32)
+    weights = np.zeros(number_of_edges, dtype=np.float32)
     cur = 0
     for node in range(number_of_nodes):
         for adjv in sorted(graph[node]):
