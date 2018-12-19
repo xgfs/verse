@@ -74,7 +74,7 @@ After learning the embeddings the saved binary file can be used the following wa
 embedding_file = "/path/to/binary/embeddings.bin"
 
 # A csv that should contain the mapping of id to entity uri.
-# E.g., each line should look like "0,http://dbpedia.org/resource/Audi" or "0,&lt;http://dbpedia.org/resource/Audi&gt;".
+# E.g., each line should look like "0,http://dbpedia.org/resource/Audi" or "0,<http://dbpedia.org/resource/Audi>".
 # The ttl chevrons (<,>) are automatically cleaned.
 index_file = "/path/to/uri/id/mapping.csv"
 
