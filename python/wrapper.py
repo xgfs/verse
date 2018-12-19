@@ -116,12 +116,3 @@ class VERSE:
                                  n_hidden, steps, n_neg_samples, lr,
                                  rng_seed, n_threads)
         return w
-
-    @staticmethod
-    def load_embeddings(file_name: str, dimensions: int) -> np.ndarray:
-        embeddings = np.fromfile(file_name, dtype=np.float32)
-        length = embeddings.shape[0]
-        assert length % dimensions == 0, 'The number of floats ({}) in the embeddings is not divisible by the number ' \
-                                         'of dimensions ({})!'.format(length, dimensions)
-        embedding_shape = [length / dimensions, dimensions]
-        return embeddings.reshape(embedding_shape)
