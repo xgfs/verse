@@ -67,7 +67,7 @@ Options:
         (note, you must also specify the variable name of the adjacency matrix ``--matfile-variable-name``)
 
 
-## Python Interface to work with Embeddings
+## Query Embeddings
 After learning the embeddings the saved binary file can be used the following way:
 ```
 # The binary file that is the output of the compiled verse binary.
