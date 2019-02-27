@@ -66,9 +66,26 @@ Options:
 1. ``--format mat`` for a Matlab MAT file containing an adjacency matrix
         (note, you must also specify the variable name of the adjacency matrix ``--matfile-variable-name``)
 
+
+## Query Embeddings
+After learning the embeddings the saved binary file can be used the following way:
+```
+# The binary file that is the output of the compiled verse binary.
+embedding_file = "/path/to/binary/embeddings.bin"
+
+# A csv that should contain the mapping of id to entity uri.
+# E.g., each line should look like "0,http://dbpedia.org/resource/Audi" or "0,<http://dbpedia.org/resource/Audi>".
+# The ttl chevrons (<,>) are automatically cleaned.
+index_file = "/path/to/uri/id/mapping.csv"
+
+# Our embeddings have 128 dimensions.
+embeddings = Embedding(embedding_file, 128, index_file)
+audi_embedding = embeddings['http://dbpedia.org/resource/Audi']
+```
+
 ## Citation
 
-If you use the code or the datasets, please consider citing the oaper:
+If you use the code or the datasets, please consider citing the paper:
 
     @inproceedings{Tsitsulin:2018:VVG:3178876.3186120,
         author = {Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M\"{u}ller, Emmanuel},
