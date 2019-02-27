@@ -66,9 +66,27 @@ Options:
 1. ``--format mat`` for a Matlab MAT file containing an adjacency matrix
         (note, you must also specify the variable name of the adjacency matrix ``--matfile-variable-name``)
 
+
+## Working with embeddings in Python
+
+Michael Loster provided an example of working with the embedding file from Python. After learning the embeddings the saved binary file can be used the following way:
+
+```
+# The binary file that is the output of the compiled verse binary.
+embedding_file = "/path/to/binary/embeddings.bin"
+
+# An optional csv that should contain the mapping of id to some string key.
+# E.g., each line should look like "0,http://dbpedia.org/resource/Audi".
+index_file = "/path/to/uri/id/mapping.csv"
+
+# Our embeddings have 128 dimensions.
+embeddings = Embedding(embedding_file, 128, index_file)
+audi_embedding = embeddings['http://dbpedia.org/resource/Audi']
+```
+
 ## Citation
 
-If you use the code or the datasets, please consider citing the oaper:
+If you use the code or the datasets, please consider citing the paper:
 
     @inproceedings{Tsitsulin:2018:VVG:3178876.3186120,
         author = {Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M\"{u}ller, Emmanuel},
@@ -87,10 +105,6 @@ If you use the code or the datasets, please consider citing the oaper:
         address = {Republic and Canton of Geneva, Switzerland},
         keywords = {feature learning, graph embedding, graph representations, information networks, node embedding, vertex similarity},
     }
-
-## Full VERSE
-
-This repository only contains the code of the scalable VERSE version. In order to obtain fVERSE, please use [this link](https://github.com/xgfs/fverse). Note, however, that fVERSE code is not well documented and/or supported.
 
 ## Contact
 
