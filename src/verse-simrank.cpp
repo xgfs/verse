@@ -40,7 +40,6 @@ ull step = 0;
 ull nv = 0, ne = 0;
 int *offsets;
 int *edges;
-int *degrees;
 
 float *w0;
 
@@ -259,9 +258,6 @@ int main(int argc, char **argv) {
   w0 = static_cast<float *>(aligned_malloc(nv * n_hidden * sizeof(float), DEFAULT_ALIGN));
   for (int i = 0; i < nv * n_hidden; i++)
     w0[i] = drand() - 0.5;
-  degrees = (int *)malloc(nv * sizeof(int));
-  for (size_t i = 0; i < nv; i++)
-    degrees[i] = offsets[i + 1] - offsets[i];
   total_steps = n_epochs * (long long)nv;
   cout << "Total steps (mil): " << total_steps / 1000000. << endl;
   chrono::steady_clock::time_point begin = chrono::steady_clock::now();
