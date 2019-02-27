@@ -7,7 +7,7 @@ class Embedding(object):
     def __init__(self, embedding_path: str, dimensions: int, index_path: str = None):
         self.dimensions = dimensions
         self.embeddings = self.load_embeddings(embedding_path)
-        self.uri_index: Dict[str, int] = {}
+        self.index: Dict[str, int] = {}
         if index_path:
             self.load_index(index_path)
 
@@ -27,16 +27,10 @@ class Embedding(object):
         with open(index_path, "r") as file:
             for line in [line.strip() for line in file.readlines()]:
                 index, uri = line.split(",", 1)
-                # clean chevrons from uri entries
-                if uri[0] == "<":
-                    uri = uri[1:]
-                if uri[-1] == ">":
-                    uri = uri[:-1]
-                self.uri_index[uri] = int(index)
-        print(f"Done loading {len(self.uri_index)} uris.")
+                self.index[uri] = int(index)
+        print(f"Done loading {len(self.index)} items.")
 
     def __getitem__(self, item) -> np.ndarray:
-        item_str = item
-        if not isinstance(item, str):
-            item_str = str(item)
-        return self.embeddings[self.uri_index[item_str]]
+        if self.index and isinstance(item, str):
+            return self.embeddings[self.index[item]]
+        return self.embeddings[item]

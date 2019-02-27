@@ -67,15 +67,16 @@ Options:
         (note, you must also specify the variable name of the adjacency matrix ``--matfile-variable-name``)
 
 
-## Query Embeddings
-After learning the embeddings the saved binary file can be used the following way:
+## Working with embeddings in Python
+
+Michael Loster provided an example of working with the embedding file from Python. After learning the embeddings the saved binary file can be used the following way:
+
 ```
 # The binary file that is the output of the compiled verse binary.
 embedding_file = "/path/to/binary/embeddings.bin"
 
-# A csv that should contain the mapping of id to entity uri.
-# E.g., each line should look like "0,http://dbpedia.org/resource/Audi" or "0,<http://dbpedia.org/resource/Audi>".
-# The ttl chevrons (<,>) are automatically cleaned.
+# An optional csv that should contain the mapping of id to some string key.
+# E.g., each line should look like "0,http://dbpedia.org/resource/Audi".
 index_file = "/path/to/uri/id/mapping.csv"
 
 # Our embeddings have 128 dimensions.
@@ -104,10 +105,6 @@ If you use the code or the datasets, please consider citing the paper:
         address = {Republic and Canton of Geneva, Switzerland},
         keywords = {feature learning, graph embedding, graph representations, information networks, node embedding, vertex similarity},
     }
-
-## Full VERSE
-
-This repository only contains the code of the scalable VERSE version. In order to obtain fVERSE, please use [this link](https://github.com/xgfs/fverse). Note, however, that fVERSE code is not well documented and/or supported.
 
 ## Contact
 
