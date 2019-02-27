@@ -1,4 +1,4 @@
-TARGETS = verse verse-weighted verse-neigh verse-simrank
+TARGETS = verse verse-weighted verse-neigh verse-simrank verse-neigh-weighted
 LIBS = verse-library
 
 CXXFLAGS = -std=c++11 -march=native
@@ -25,6 +25,6 @@ $(LIBS):
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(LIBFLAGS) -o $@.so $@.cpp
 
 clean:
-	rm -rfv $(TARGETS)
+	rm -rfv $(TARGETS) $(addsuffix .so, $(LIBS))
 
 .PHONY: all clean
