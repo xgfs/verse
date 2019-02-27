@@ -33,7 +33,6 @@ float global_lr = 0.0025f;
 int n_epochs = 100000;
 int n_hidden = 128;
 int n_samples = 3;
-float ppralpha = 0.85f;
 
 ull total_steps;
 ull step = 0;
@@ -152,17 +151,6 @@ inline int sample_neighbor(int node) {
   return edges[offsets[node] + walker_draw(degrees[node], &weights[offsets[node]], &weight_js[offsets[node]])];
 }
 
-inline int sample_rw(int node) {
-  int n2 = node;
-  while (drand() < ppralpha) {
-    int neighbor = sample_neighbor(n2);
-    if (neighbor == -1)
-      return n2;
-    n2 = neighbor;
-  }
-  return n2;
-}
-
 int ArgPos(char *str, int argc, char **argv) {
   for (int a = 1; a < argc; a++)
     if (!strcmp(str, argv[a])) {
@@ -213,7 +201,7 @@ void Train() {
         last_ncount = ncount;
       }
       size_t n1 = irand(nv);
-      size_t n2 = sample_rw(n1);
+      size_t n2 = sample_neighbor(n1);
       update(&w0[n1 * n_hidden], &w0[n2 * n_hidden], 1, nce_bias);
       for (int i = 0; i < n_samples; i++) {
         size_t neg = irand(nv);
@@ -261,8 +249,6 @@ int main(int argc, char **argv) {
     n_epochs = atoi(argv[a + 1]);
   if ((a = ArgPos(const_cast<char *>("-lr"), argc, argv)) > 0)
     global_lr = atof(argv[a + 1]);
-  if ((a = ArgPos(const_cast<char *>("-alpha"), argc, argv)) > 0)
-    ppralpha = atof(argv[a + 1]);
   ifstream embFile(network_file, ios::in | ios::binary);
   if (embFile.is_open()) {
     char header[] = "----";

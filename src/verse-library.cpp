@@ -190,11 +190,11 @@ DLLEXPORT int verse_ppr_train(float *w0, int *offsets, int *edges,
           break;
         last_ncount = ncount;
       }
-      int n1 = irand(num_nodes);
-      int n2 = sample_rw(offsets, edges, n1, alpha);
+      size_t n1 = irand(num_nodes);
+      size_t n2 = sample_rw(offsets, edges, n1, alpha);
       update(&w0[n1 * n_hidden], &w0[n2 * n_hidden], 1, n_hidden, lr, nce_bias);
       for (int i = 0; i < n_neg_samples; i++) {
-        int neg = irand(num_nodes);
+        size_t neg = irand(num_nodes);
         update(&w0[n1 * n_hidden], &w0[neg * n_hidden], 0, n_hidden, lr,
                nce_bias_neg);
       }
@@ -234,13 +234,13 @@ DLLEXPORT int verse_neigh_train(float *w0, int *offsets, int *edges,
           break;
         last_ncount = ncount;
       }
-      int n1 = irand(num_nodes);
-      int n2 = sample_neighbor(offsets, edges, n1);
+      size_t n1 = irand(num_nodes);
+      size_t n2 = sample_neighbor(offsets, edges, n1);
       if (n2 == -1)
         continue;
       update(&w0[n1 * n_hidden], &w0[n2 * n_hidden], 1, n_hidden, lr, nce_bias);
       for (int i = 0; i < n_neg_samples; i++) {
-        int neg = irand(num_nodes);
+        size_t neg = irand(num_nodes);
         update(&w0[n1 * n_hidden], &w0[neg * n_hidden], 0, n_hidden, lr,
                nce_bias_neg);
       }

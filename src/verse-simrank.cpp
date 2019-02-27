@@ -182,13 +182,13 @@ void Train() {
                  << step / (float)(total_steps + 1) * 100 << "%";
         last_ncount = ncount;
       }
-      int n1 = irand(0, nv);
+      size_t n1 = irand(0, nv);
       int nt = sample_rw(n1);
-      int n2 = sample_rw(nt); 
+      size_t n2 = sample_rw(nt); 
       if(n2 == -1) continue;
       update(&w0[n1 * n_hidden], &w0[n2 * n_hidden], 1, nce_bias);
       for (int i = 0; i < n_samples; i++) {
-        int neg = irand(nv);
+        size_t neg = irand(nv);
         update(&w0[n1 * n_hidden], &w0[neg * n_hidden], 0, nce_bias_neg);
       }
       ncount++;
@@ -260,7 +260,7 @@ int main(int argc, char **argv) {
   for (int i = 0; i < nv * n_hidden; i++)
     w0[i] = drand() - 0.5;
   degrees = (int *)malloc(nv * sizeof(int));
-  for (int i = 0; i < nv; i++)
+  for (size_t i = 0; i < nv; i++)
     degrees[i] = offsets[i + 1] - offsets[i];
   total_steps = n_epochs * (long long)nv;
   cout << "Total steps (mil): " << total_steps / 1000000. << endl;
@@ -273,7 +273,7 @@ int main(int argc, char **argv) {
        << chrono::duration_cast<std::chrono::duration<float>>(end - begin)
               .count()
        << " s to run" << endl;
-  for (int i = 0; i < nv * n_hidden; i++)
+  for (size_t i = 0; i < nv * n_hidden; i++)
     if (w0[0] != w0[0]) {
       cout << endl << "NaN! Not saving the result.." << endl;
       return 1;
