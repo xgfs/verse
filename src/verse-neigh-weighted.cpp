@@ -114,9 +114,12 @@ float FastSigmoid(float x) {
   return sigmoid_table[k];
 }
 
-inline int irand(int min, int max) { return lrand() % (max - min) + min; }
+inline int irand(uint32_t max) {
+  uint32_t rnd = lrand();
+  return (uint64_t(rnd) * uint64_t(max)) >> 32;
+}
 
-inline int irand(int max) { return lrand() % max; }
+inline int irand(uint32_t min, uint32_t max) { return irand(max - min) + min; }
 
 void init_walker(int n, int *j, float *probs) { // assumes probs are normalized
   vector<int> smaller, larger;

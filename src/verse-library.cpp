@@ -73,9 +73,12 @@ static inline double drand() {
   return a.d - 1.0;
 }
 
-inline int irand(int min, int max) { return lrand() % (max - min) + min; }
+inline int irand(uint32_t max) {
+  uint32_t rnd = lrand();
+  return (uint64_t(rnd) * uint64_t(max)) >> 32;
+}
 
-inline int irand(int max) { return lrand() % max; }
+inline int irand(uint32_t min, uint32_t max) { return irand(max - min) + min; }
 
 inline void *aligned_malloc(size_t size, size_t align) {
 #ifndef _MSC_VER
