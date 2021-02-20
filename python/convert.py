@@ -39,7 +39,7 @@ def xgfs2file(outf, indptr, indices, weights=None):
 def is_numbers_only(nodes):
     try:
         list(map(int, nodes))
-    except:
+    except Exception:
         return False
     return True
 
@@ -52,7 +52,8 @@ def list2mat(input, undirected, sep, format):
                 continue
             line = line.strip()
             splt = line.split(sep)
-            if not splt: continue
+            if not splt:
+                continue
             if format == 'edgelist':
                 assert len(splt) == 2, 'In edgelist there should be 2 values per line '
             if format == 'weighted_edgelist':
@@ -74,7 +75,8 @@ def list2mat(input, undirected, sep, format):
                 continue
             line = line.strip()
             splt = line.split(sep)
-            if not splt: continue
+            if not splt:
+                continue
             weight = 1
             src = node2id[int(splt[0])] if isnumbers else node2id[splt[0]]
             if format == "weighted_edgelist":
