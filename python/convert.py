@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 #   encoding: utf8
 #   convert.py
 """Converter for three common graph formats (MATLAB sparse matrix, adjacency
