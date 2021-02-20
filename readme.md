@@ -7,26 +7,27 @@ This repository provides a reference implementation of VERSE as well as links to
 We make VERSE available in two forms: fast, optimized C++ code that was used in the experiments, and more convenient python wrapper. Note that wrapper is still experimental and may not provide optimal performance.
 
 For C++ executables:
-
-    cd src && make;
-
+```bash
+cd src && make;
+```
 should be enough on most platforms. If you need to change the default compiler (i.e. to Intel), use:
-
-    make CXX=icpc
+```bash
+make CXX=icpc
+```
 
 VERSE is able to encompass diverse similarity measures under its model. For performance reasons, we have implemented three different similarities separately.
 
 Use the command
-
-    verse -input data/karate.bcsr -output karate.bin -dim 128 -alpha 0.85 -threads 4 -nsamples 3
-
+```bash
+verse -input data/karate.bcsr -output karate.bin -dim 128 -alpha 0.85 -threads 4 -nsamples 3
+```
 to run the default version (that corresponds to PPR similarity) with 128 embedding dimension, PPR alpha 0.85, using 3 negative samples.
 
 ## Graph file format
 
 This implementation uses a custom graph format, namely binary [compressed sparse row](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29) (BCSR) format for efficiency and reduced memory usage. Converter for three common graph formats (MATLAB sparse matrix, adjacency list, edge list) can be found in the ``python`` directory of the project. Usage:
 
-```bash
+```console
 $ convert-bcsr --help
 Usage: convert-bcsr [OPTIONS] INPUT OUTPUT
 
@@ -71,7 +72,7 @@ Options:
 
 Michael Loster provided an example of working with the embedding file from Python. After learning the embeddings the saved binary file can be used the following way:
 
-```
+```python
 # The binary file that is the output of the compiled verse binary.
 embedding_file = "/path/to/binary/embeddings.bin"
 
@@ -87,25 +88,28 @@ audi_embedding = embeddings['http://dbpedia.org/resource/Audi']
 ## Citation
 
 If you use the code or the datasets, please consider citing the paper:
-
-    @inproceedings{Tsitsulin:2018:VVG:3178876.3186120,
-        author = {Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M\"{u}ller, Emmanuel},
-        title = {VERSE: Versatile Graph Embeddings from Similarity Measures},
-        booktitle = {Proceedings of the 2018 World Wide Web Conference},
-        series = {WWW '18},
-        year = {2018},
-        isbn = {978-1-4503-5639-8},
-        location = {Lyon, France},
-        pages = {539--548},
-        numpages = {10},
-        url = {https://doi.org/10.1145/3178876.3186120},
-        doi = {10.1145/3178876.3186120},
-        acmid = {3186120},
-        publisher = {International World Wide Web Conferences Steering Committee},
-        address = {Republic and Canton of Geneva, Switzerland},
-        keywords = {feature learning, graph embedding, graph representations, information networks, node embedding, vertex similarity},
-    }
+```bibtex
+@inproceedings{Tsitsulin:2018:VVG:3178876.3186120,
+    author = {Tsitsulin, Anton and Mottin, Davide and Karras, Panagiotis and M\"{u}ller, Emmanuel},
+    title = {VERSE: Versatile Graph Embeddings from Similarity Measures},
+    booktitle = {Proceedings of the 2018 World Wide Web Conference},
+    series = {WWW '18},
+    year = {2018},
+    isbn = {978-1-4503-5639-8},
+    location = {Lyon, France},
+    pages = {539--548},
+    numpages = {10},
+    url = {https://doi.org/10.1145/3178876.3186120},
+    doi = {10.1145/3178876.3186120},
+    acmid = {3186120},
+    publisher = {International World Wide Web Conferences Steering Committee},
+    address = {Republic and Canton of Geneva, Switzerland},
+    keywords = {feature learning, graph embedding, graph representations, information networks, node embedding, vertex similarity},
+}
+```
 
 ## Contact
 
-`echo "%7=87@=<2=<>5.27" | tr '#-)/->' '_-|'`
+```bash
+echo "%7=87@=<2=<>5.27" | tr '#-)/->' '_-|'
+```
