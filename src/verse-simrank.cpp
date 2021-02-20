@@ -259,7 +259,7 @@ int main(int argc, char **argv) {
     return 0;
   }
   w0 = static_cast<float *>(aligned_malloc(nv * n_hidden * sizeof(float), DEFAULT_ALIGN));
-  for (int i = 0; i < nv * n_hidden; i++)
+  for (size_t i = 0; i < nv * n_hidden; i++)
     w0[i] = drand() - 0.5;
   total_steps = n_epochs * (long long)nv;
   cout << "Total steps (mil): " << total_steps / 1000000. << endl;
