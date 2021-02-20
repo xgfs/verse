@@ -28,8 +28,8 @@ to run the default version (that corresponds to PPR similarity) with 128 embeddi
 This implementation uses a custom graph format, namely binary [compressed sparse row](https://en.wikipedia.org/wiki/Sparse_matrix#Compressed_sparse_row_.28CSR.2C_CRS_or_Yale_format.29) (BCSR) format for efficiency and reduced memory usage. Converter for three common graph formats (MATLAB sparse matrix, adjacency list, edge list) can be found in the ``python`` directory of the project. Usage:
 
 ```console
-$ convert-bcsr --help
-Usage: convert-bcsr [OPTIONS] INPUT OUTPUT
+$ ./python/convert.py --help
+Usage: convert.py [OPTIONS] INPUT OUTPUT
 
   Converter for three common graph formats (MATLAB sparse matrix, adjacency
   list, edge list) can be found in the root directory of the project.
