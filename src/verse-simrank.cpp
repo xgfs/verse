@@ -249,7 +249,7 @@ int main(int argc, char **argv) {
     embFile.read(reinterpret_cast<char *>(&nv), sizeof(long long));
     embFile.read(reinterpret_cast<char *>(&ne), sizeof(long long));
     offsets = static_cast<int *>(aligned_malloc((nv + 1) * sizeof(int32_t), DEFAULT_ALIGN));
-  edges = static_cast<int *>(aligned_malloc(ne * sizeof(int32_t), DEFAULT_ALIGN));
+    edges = static_cast<int *>(aligned_malloc(ne * sizeof(int32_t), DEFAULT_ALIGN));
     embFile.read(reinterpret_cast<char *>(offsets), nv * sizeof(int32_t));
     offsets[nv] = (int)ne;
     embFile.read(reinterpret_cast<char *>(edges), sizeof(int32_t) * ne);
