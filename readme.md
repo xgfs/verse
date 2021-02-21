@@ -73,6 +73,8 @@ Options:
 Michael Loster provided an example of working with the embedding file from Python. After learning the embeddings the saved binary file can be used the following way:
 
 ```python
+from python.embedding import Embedding
+
 # The binary file that is the output of the compiled verse binary.
 embedding_file = "/path/to/binary/embeddings.bin"
 
