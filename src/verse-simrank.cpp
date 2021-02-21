@@ -249,7 +249,7 @@ int main(int argc, char **argv) {
     embFile.read(reinterpret_cast<char *>(&nv), sizeof(long long));
     embFile.read(reinterpret_cast<char *>(&ne), sizeof(long long));
     offsets = static_cast<int *>(aligned_malloc((nv + 1) * sizeof(int32_t), DEFAULT_ALIGN));
-  edges = static_cast<int *>(aligned_malloc(ne * sizeof(int32_t), DEFAULT_ALIGN));
+    edges = static_cast<int *>(aligned_malloc(ne * sizeof(int32_t), DEFAULT_ALIGN));
     embFile.read(reinterpret_cast<char *>(offsets), nv * sizeof(int32_t));
     offsets[nv] = (int)ne;
     embFile.read(reinterpret_cast<char *>(edges), sizeof(int32_t) * ne);
@@ -259,7 +259,7 @@ int main(int argc, char **argv) {
     return 0;
   }
   w0 = static_cast<float *>(aligned_malloc(nv * n_hidden * sizeof(float), DEFAULT_ALIGN));
-  for (int i = 0; i < nv * n_hidden; i++)
+  for (size_t i = 0; i < nv * n_hidden; i++)
     w0[i] = drand() - 0.5;
   total_steps = n_epochs * (long long)nv;
   cout << "Total steps (mil): " << total_steps / 1000000. << endl;
